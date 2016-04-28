@@ -42,7 +42,9 @@ public class Infection : MonoBehaviour {
       rigidbody.angularVelocity = otherGORigidbody.angularVelocity;
 
       // Destroy the game object after 2 seconds.
-      Destroy(this /**/, 2.0f);
+      Destroy(this.gameObject, 2.0f);
+
+      
     }
   }
 }

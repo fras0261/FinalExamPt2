@@ -5,12 +5,19 @@ public class ToothManager : MonoBehaviour {
   public List<GameObject> teeth;
   public Color infectionColor;
 
+    public GameObject tooth;
   public float nextInfectionDelay = 1.0f;
   private float _elapsedTime = 0.0f;
 
+    public List<Transform> teethLocations;
 	// Use this for initialization
 	void Start () {
     // go and store all of the initial positions/transforms of the teeth so that we can spawn new teeth at this location later.
+        foreach(GameObject tooth in teeth)
+        {
+            teethLocations.Add(tooth.transform);
+            Debug.Log(tooth.transform.position);
+        }
 	}
 	
 	// Update is called once per frame
@@ -49,12 +56,14 @@ public class ToothManager : MonoBehaviour {
       // Remove the tooth so that we can populate this index later.
       int toothIndex = teeth.IndexOf(toothToRemove);
       teeth[toothIndex] = null;
+        Destroy(toothToRemove, 1.0f);
     }
   }
 
   public void SpawnTooth() {
     for(int toothIndex = 0; toothIndex < teeth.Count; toothIndex++) {
       if(teeth[toothIndex] == null) {
+        
         // spawn a tooth here.
       }
     }

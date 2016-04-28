@@ -11,4 +11,17 @@ public class RotateEyes : MonoBehaviour {
     // Rotate the eyes around the Y-axis @ 20-degrees/second.
     transform.Rotate(rotationAxis, rotationAngle * Time.deltaTime);
 	}
+
+    public void RotateBurst()
+    {
+        float elapsedTime = 0.0f;
+        float burstDuration = 5.0f;
+
+        while (elapsedTime < burstDuration)
+        {
+            transform.Rotate(rotationAxis, (rotationAngle + 60) * Time.deltaTime);
+            elapsedTime += Time.deltaTime;
+        }
+            
+    }
 }

@@ -24,6 +24,7 @@ public class Tooth : MonoBehaviour {
   }
 
   public void OnDestroy() {
+        Debug.Log("Destorying tooth");
     _toothManager.RemoveTooth(gameObject);
   }
 }
